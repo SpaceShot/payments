@@ -23,5 +23,10 @@ $(function () {
             console.log(data);
             residence.buildOutput($("#residences"), data);
         });
+
+    // click functions for each action
+    $('.ledger').on('click', function () {
+        $(this).toggleClass('expand');
+    });
 });
 

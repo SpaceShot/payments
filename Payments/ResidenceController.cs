@@ -46,7 +46,7 @@ namespace Payments
                     Address = "2732 N Barley Sheaf Road",
                     City = "Coatesville",
                     State = "PA",
-                    Zip = "19320",
+                    Zip = "19320"
                 }
             });
 

@@ -24,3 +24,4 @@ $(function () {
             residence.buildOutput($("#residences"), data);
         });
 });
+

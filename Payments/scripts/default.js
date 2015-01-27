@@ -13,8 +13,19 @@
 
     return thisObject;
 }());
-
-
+var house = {
+    Id: 2732, Homeowner: {
+        Name: "Mike and Leann Cordenoy",
+        Address: "2732 N Barley Sheaf Road",
+        City: "Coatesville",
+        State: "PA",
+        Zip: "19320"
+    }
+};
+var app = angular.module('accountBook', []);
+app.controller('AccountBookController', function () {
+    this.house = house;
+});
 $(function () {
     $('#jqueryCanary').html('Yep, we&#39re good');
 
@@ -25,8 +36,11 @@ $(function () {
         });
 
     // click functions for each action
-    $('.ledger').on('click', function () {
-        $(this).toggleClass('expand');
+    $('.tools').on('click', function () {
+        $(this).toggleClass('expand').toggleClass('hidden');
+        $('.tools').toggleClass('hidden');
+        //$('.assess').toggleClass('hidden');
+        //$('.ledger').toggleClass('hidden');
     });
 });
 

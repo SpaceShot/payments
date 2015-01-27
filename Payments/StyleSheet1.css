@@ -46,3 +46,6 @@
     opacity: 0.5;
     width: 600px;
 }
+.hidden {
+    opacity: 0;
+}

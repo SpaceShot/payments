@@ -55,7 +55,7 @@ namespace Payments
                 Id = 2734,
                 Homeowner = new Homeowner
                 {
-                    Name = "Christopher and Meredith Gomez",
+                    Name = "Cory and Francine Goodman",
                     Address = "2734 N Barley Sheaf Road",
                     City = "Coatesville",
                     State = "PA",
@@ -81,7 +81,7 @@ namespace Payments
                 Id = 2714,
                 Homeowner = new Homeowner
                 {
-                    Name = "Jim Mentle & Melissa Sass",
+                    Name = "Jim Mentle and Melissa Sass",
                     Address = "2714 N Barley Sheaf Road",
                     City = "Coatesville",
                     State = "PA",

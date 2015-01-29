@@ -13,7 +13,7 @@
 
     return thisObject;
 }());
-var house = {
+var houses = [{
     Id: 2732, Homeowner: {
         Name: "Mike and Leann Cordenoy",
         Address: "2732 N Barley Sheaf Road",
@@ -21,10 +21,19 @@ var house = {
         State: "PA",
         Zip: "19320"
     }
-};
+},
+{
+    Id: 2740, Homeowner: {
+        Name: "Cheryl and Lance Armstrong",
+        Address: "2740 N Barley Sheaf Road",
+        City: "Coatesville",
+        State: "PA",
+        Zip: "19320"
+    }
+}];
 var app = angular.module('accountBook', []);
 app.controller('AccountBookController', function () {
-    this.house = house;
+    this.houses = houses;
 });
 $(function () {
     $('#jqueryCanary').html('Yep, we&#39re good');

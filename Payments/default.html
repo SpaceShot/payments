@@ -21,14 +21,17 @@
             </ul>-->
         </div>
     </header>
- 
+
     <div class="tools checks"><p>Enter Checks</p><p></p></div>
     <div class="tools assess"><p>Assess Dues and Fees</p></div>
     <div class="tools ledger"><p>Examine Ledger</p></div>
 
     <div class="test">
         <p>Hello, welcome! Please come in!</p>
-        <h1>{{book.house.Homeowner.Name}}</h1>
+        <div ng-repeat="residence in book.houses">
+            <h1>{{residence.Homeowner.Name}}</h1>
+            <h2>{{residence.Homeowner.Address}} id: {{residence.Id}}</h2>
+        </div>
         <p>
             jQuery canary: <span id="jqueryCanary"></span>
         </p>

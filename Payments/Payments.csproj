@@ -82,6 +82,7 @@
     <Content Include="packages.config" />
     <Content Include=".weignore" />
     <None Include="Properties\PublishProfiles\cg-payments.pubxml" />
+    <Content Include="scripts\angular.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

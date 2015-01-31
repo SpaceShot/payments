@@ -1,4 +1,6 @@
-﻿var residence = (function () {
+﻿/// <reference path="angular.min.js" />
+
+var residence = (function () {
     var i;
     var thisObject = {
         buildOutput: function (div, data) {
@@ -13,28 +15,59 @@
 
     return thisObject;
 }());
-var houses = [{
-    Id: 2732, Homeowner: {
-        Name: "Mike and Leann Cordenoy",
-        Address: "2732 N Barley Sheaf Road",
-        City: "Coatesville",
-        State: "PA",
-        Zip: "19320"
-    }
-},
-{
-    Id: 2740, Homeowner: {
-        Name: "Cheryl and Lance Armstrong",
-        Address: "2740 N Barley Sheaf Road",
-        City: "Coatesville",
-        State: "PA",
-        Zip: "19320"
-    }
-}];
+
 var app = angular.module('accountBook', []);
-app.controller('AccountBookController', function () {
-    this.houses = houses;
+
+app.controller('AccountBookController', ['restApiService', function (dataService) {
+    var self = this;
+
+    dataService.callWebApi(function (data) {
+        self.houses = data;
+    });
+}]);
+
+app.service('restApiService', ['$http', function ($http) {
+    return {
+        callWebApi: function (callback) {
+            $http.get('api/Residence')
+                .success(function (data, status, headers, config) {
+                    callback(data);
+                });
+        }
+    }
+}]);
+
+app.service('testApiService', function () {
+    var houses = [
+        {
+            Id: 2732,
+            Homeowner: {
+                Name: "Mike and Leann Cordenoy",
+                Address: "2732 North Test",
+                City: "Maxville",
+                State: "CA",
+                Zip: "91256"
+            }
+        },
+        {
+            Id: 2740,
+            Homeowner: {
+                Name: "Cheryl and Lance Armstrong",
+                Address: "2740 North Test",
+                City: "Maxville",
+                State: "CA",
+                Zip: "91256"
+            }
+        }];
+
+    return {
+        callWebApi: function (callback) {
+            callback(houses);
+        }
+    }
 });
+
+
 $(function () {
     $('#jqueryCanary').html('Yep, we&#39re good');
 

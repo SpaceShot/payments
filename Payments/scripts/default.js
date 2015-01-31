@@ -3,7 +3,7 @@
     var thisObject = {
         buildOutput: function (div, data) {
             var result = $("<p>");
-            for (i=0; i<data.length; i++) {
+            for (i = 0; i < data.length; i++) {
                 var p = $("<p>").html(data[i].Id);
                 result.append(p);
             }

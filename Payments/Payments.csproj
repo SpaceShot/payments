@@ -78,8 +78,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\barleysheaf-small.png" />
-    <Content Include="bootstrap.min.css" />
+    <Content Include="content\bootstrap.min.css" />
     <Content Include="packages.config" />
+    <Content Include=".weignore" />
     <None Include="Properties\PublishProfiles\cg-payments.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -93,7 +94,7 @@
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\default.js" />
     <Content Include="Global.asax" />
-    <Content Include="StyleSheet1.css" />
+    <Content Include="content\StyleSheet1.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

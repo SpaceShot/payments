@@ -78,11 +78,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\barleysheaf-small.png" />
-    <Content Include="content\bootstrap.min.css" />
+    <None Include="bower.json" />
+    <Content Include="GruntFile.js" />
     <Content Include="packages.config" />
     <Content Include=".weignore" />
+    <Content Include="package.json" />
     <None Include="Properties\PublishProfiles\cg-payments.pubxml" />
-    <Content Include="scripts\angular.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -92,7 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="default.html" />
-    <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\default.js" />
     <Content Include="Global.asax" />
     <Content Include="content\StyleSheet1.css" />

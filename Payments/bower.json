@@ -1,11 +1,22 @@
 {
-    "name": "payments",
-    "version": "0.0.1",
-    "authors": [ "Chris Gomez <cagomez@cellbycell.com>" ],
-    "description": "AngularJS Front End and ASP.NET Web Api",
+    "name": "Payments",
+    "version": "0.0.0",
+    "homepage": "https://github.com/SpaceShot/payments",
+    "authors": [
+        "Chris Gomez <cagomez@cellbycell.com>"
+    ],
+    "description": "Sample Angular frontend and ASP.NET Web Api backend",
     "dependencies": {
-        "angular": "1.3.10",
-        "bootstrap": "3.0.0"
+        "angular": "1.3.11",
+        "jquery": "2.1.3",
+        "bootstrap": "3.3.2"
     },
-    "private": true
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
 }

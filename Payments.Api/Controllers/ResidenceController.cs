@@ -1,8 +1,9 @@
 ﻿using System.Collections.Concurrent;
 using System.Linq;
 using System.Web.Http;
+using Payments.Api.Models;
 
-namespace Payments
+namespace Payments.Api.Controllers
 {
     public class ResidenceController : ApiController
     {
@@ -89,20 +90,5 @@ namespace Payments
                 }
             });
         }
-    }
-
-    public class Residence
-    {
-        public int Id;
-        public Homeowner Homeowner;
-    }
-
-    public class Homeowner
-    {
-        public string Name;
-        public string Address;
-        public string City;
-        public string State;
-        public string Zip;
     }
 }

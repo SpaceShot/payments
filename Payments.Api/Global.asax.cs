@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Web.Http;
+using System.Web.Http.Cors;
+using Payments.Api.Infrastructure;
 
-namespace Payments
+namespace Payments.Api
 {
     public class Global : System.Web.HttpApplication
     {
@@ -15,7 +17,11 @@ namespace Payments
     {
         public static void Register(HttpConfiguration config)
         {
+            var hostConfig = new ConfigurationFromWebConfig();
+
             // Web API configuration and services
+            var cors = new EnableCorsAttribute(hostConfig.ClientAddress, "*", "*");
+            config.EnableCors(cors);
 
             // Web API routes
             config.MapHttpAttributeRoutes();

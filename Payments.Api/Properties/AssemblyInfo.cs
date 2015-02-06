@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Payments")]
+[assembly: AssemblyTitle("Payments.Api")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Payments")]
+[assembly: AssemblyProduct("Payments.Api")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("45e5ce8f-ed6a-4e61-b7ad-235ae1559ee3")]
+[assembly: Guid("c7519e1c-d96b-41e3-aa79-d36c5e7b7e32")]
 
 // Version information for an assembly consists of the following four values:
 //

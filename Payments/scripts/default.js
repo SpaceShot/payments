@@ -1,4 +1,5 @@
-﻿/// <reference path="angular.min.js" />
+﻿/// <reference path="webConfiguration.js" />
+/// <reference path="angular.min.js" />
 
 var residence = (function () {
     var i;
@@ -29,7 +30,7 @@ app.controller('AccountBookController', ['restApiService', function (dataService
 app.service('restApiService', ['$http', function ($http) {
     return {
         callWebApi: function (callback) {
-            $http.get('http://localhost:36449/api/Residence')
+            $http.get(webConfiguration.apiBaseAddress + 'api/Residence')
                 .success(function (data /*, status, headers, config*/) {
                     callback(data);
                 });
@@ -71,7 +72,7 @@ app.service('testApiService', function () {
 $(function () {
     $('#jqueryCanary').html('Yep, we&#39re good');
 
-    $.get("http://localhost:36449/api/Residence")
+    $.get(webConfiguration.apiBaseAddress + "api/Residence")
         .done(function (data) {
             console.log(data);
             residence.buildOutput($("#residences"), data);

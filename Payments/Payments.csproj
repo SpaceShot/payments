@@ -54,6 +54,7 @@
   <ItemGroup>
     <Content Include="scripts\default.js" />
     <Content Include="content\site.css" />
+    <Content Include="scripts\webConfiguration.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

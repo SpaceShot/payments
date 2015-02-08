@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Configuration;
 
-namespace Payments.Api.Infrastructure
+namespace Payments.Api.WebHost.Infrastructure
 {
     public class ConfigurationFromWebConfig
     {

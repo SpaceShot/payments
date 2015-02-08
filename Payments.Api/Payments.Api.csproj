@@ -84,10 +84,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Infrastructure\ConfigurationFromWebConfig.cs" />
     <Compile Include="Infrastructure\ControllerActivator.cs" />
     <Compile Include="Models\Homeowner.cs" />
+    <Compile Include="Models\IPayments.cs" />
     <Compile Include="Models\IResidents.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\PaymentsInMemory.cs" />
     <Compile Include="Models\Residence.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

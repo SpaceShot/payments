@@ -10,10 +10,13 @@ namespace Payments.Api.Infrastructure
     public class ControllerActivator : IHttpControllerActivator
     {
         private readonly IResidents _residents;
+        private readonly IPayments _payments;
 
-        public ControllerActivator(IResidents residents)
+
+        public ControllerActivator(IResidents residents, IPayments payments)
         {
             this._residents = residents;
+            this._payments = payments;
         }
 
         public IHttpController Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
@@ -21,6 +24,10 @@ namespace Payments.Api.Infrastructure
             if (controllerType == typeof(ResidenceController))
             {
                 return new ResidenceController(_residents);
+            }
+            else if (controllerType == typeof(PaymentsController))
+            {
+                return new PaymentsController(_payments);
             }
 
             else throw new ArgumentException("Controller not recognized", "controllerType");

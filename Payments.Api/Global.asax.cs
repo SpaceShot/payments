@@ -36,7 +36,8 @@ namespace Payments.Api
 
 
             var residents = new ResidentsInMemory();
-            config.Services.Replace(typeof(IHttpControllerActivator), new ControllerActivator(residents));
+            var payments = new PaymentsInMemory();
+            config.Services.Replace(typeof(IHttpControllerActivator), new ControllerActivator(residents,payments));
         }
     }
 }

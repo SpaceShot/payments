@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Api", "Payments.Ap
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F9268FC5-1C99-4D13-8AAC-247D6BB7EE31}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Api.WebHost.Tests", "Payments.Api.WebHost.Tests\Payments.Api.WebHost.Tests.csproj", "{6C5A52D8-79A0-4DC7-A6A2-5E8FDC12DD98}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,11 +39,16 @@ Global
 		{FCA435F2-64C3-49E3-BD6C-DBA1285F7538}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCA435F2-64C3-49E3-BD6C-DBA1285F7538}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCA435F2-64C3-49E3-BD6C-DBA1285F7538}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5A52D8-79A0-4DC7-A6A2-5E8FDC12DD98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5A52D8-79A0-4DC7-A6A2-5E8FDC12DD98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5A52D8-79A0-4DC7-A6A2-5E8FDC12DD98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5A52D8-79A0-4DC7-A6A2-5E8FDC12DD98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{176FC537-F2A6-4FDA-9D94-767E08AF48CE} = {F9268FC5-1C99-4D13-8AAC-247D6BB7EE31}
+		{6C5A52D8-79A0-4DC7-A6A2-5E8FDC12DD98} = {F9268FC5-1C99-4D13-8AAC-247D6BB7EE31}
 	EndGlobalSection
 EndGlobal

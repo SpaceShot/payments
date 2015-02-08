@@ -1,7 +1,7 @@
-﻿using Payments.Api.Models;
+﻿using Payments.Api.WebHost.Models;
 using System.Web.Http;
 
-namespace Payments.Api.Controllers
+namespace Payments.Api.WebHost.Controllers
 {
     public class ResidenceController : ApiController
     {

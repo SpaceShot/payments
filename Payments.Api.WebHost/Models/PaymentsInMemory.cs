@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Payments.Api.Models
+namespace Payments.Api.WebHost.Models
 {
     public class PaymentsInMemory : IPayments
     {

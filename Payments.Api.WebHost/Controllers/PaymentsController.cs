@@ -1,8 +1,8 @@
+using Payments.Api.WebHost.Models;
 using System;
 using System.Web.Http;
-using Payments.Api.Models;
 
-namespace Payments.Api.Controllers
+namespace Payments.Api.WebHost.Controllers
 {
     public class PaymentsController : ApiController
     {

@@ -1,4 +1,4 @@
-namespace Payments.Api.Models
+namespace Payments.Api.WebHost.Models
 {
     public class Homeowner
     {

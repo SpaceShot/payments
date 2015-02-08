@@ -1,11 +1,11 @@
-﻿using Payments.Api.Infrastructure;
-using Payments.Api.Models;
+﻿using Payments.Api.WebHost.Infrastructure;
+using Payments.Api.WebHost.Models;
 using System;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Dispatcher;
 
-namespace Payments.Api
+namespace Payments.Api.WebHost
 {
     public class Global : System.Web.HttpApplication
     {
@@ -33,7 +33,6 @@ namespace Payments.Api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-
 
             var residents = new ResidentsInMemory();
             var payments = new PaymentsInMemory();

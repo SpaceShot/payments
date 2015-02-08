@@ -7,9 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments", "Payments\Paymen
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5B71111A-F9A8-4E04-8D84-FB4EF7A2E09B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Api", "Payments.Api\Payments.Api.csproj", "{18D14F00-BE5B-426A-9CC8-AF2CD77A7BFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Api.WebHost", "Payments.Api.WebHost\Payments.Api.WebHost.csproj", "{18D14F00-BE5B-426A-9CC8-AF2CD77A7BFC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Api.Tests", "Payments.Api.Tests\Payments.Api.Tests.csproj", "{176FC537-F2A6-4FDA-9D94-767E08AF48CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Api", "Payments.Api\Payments.Api.csproj", "{FCA435F2-64C3-49E3-BD6C-DBA1285F7538}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F9268FC5-1C99-4D13-8AAC-247D6BB7EE31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,8 +33,15 @@ Global
 		{176FC537-F2A6-4FDA-9D94-767E08AF48CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{176FC537-F2A6-4FDA-9D94-767E08AF48CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{176FC537-F2A6-4FDA-9D94-767E08AF48CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCA435F2-64C3-49E3-BD6C-DBA1285F7538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCA435F2-64C3-49E3-BD6C-DBA1285F7538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCA435F2-64C3-49E3-BD6C-DBA1285F7538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCA435F2-64C3-49E3-BD6C-DBA1285F7538}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{176FC537-F2A6-4FDA-9D94-767E08AF48CE} = {F9268FC5-1C99-4D13-8AAC-247D6BB7EE31}
 	EndGlobalSection
 EndGlobal

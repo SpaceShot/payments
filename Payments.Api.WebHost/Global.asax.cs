@@ -1,5 +1,5 @@
 ﻿using Payments.Api.WebHost.Infrastructure;
-using Payments.Api.WebHost.Models;
+using Payments.Data.InMemory;
 using System;
 using System.Web.Http;
 using System.Web.Http.Cors;

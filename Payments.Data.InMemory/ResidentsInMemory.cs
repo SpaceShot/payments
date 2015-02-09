@@ -1,8 +1,9 @@
-﻿using System.Collections.Concurrent;
+﻿using Payments.Core.Models;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Payments.Api.WebHost.Models
+namespace Payments.Data.InMemory
 {
     public class ResidentsInMemory : IResidents
     {

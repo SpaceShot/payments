@@ -96,6 +96,14 @@
       <Project>{FCA435F2-64C3-49E3-BD6C-DBA1285F7538}</Project>
       <Name>Payments.Api</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Payments.Core\Payments.Core.csproj">
+      <Project>{046FDCCB-AD72-4652-98C0-4B04996747F7}</Project>
+      <Name>Payments.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Payments.Data.InMemory\Payments.Data.InMemory.csproj">
+      <Project>{FE4BDB20-E2FF-460F-8D70-088E5E011D38}</Project>
+      <Name>Payments.Data.InMemory</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

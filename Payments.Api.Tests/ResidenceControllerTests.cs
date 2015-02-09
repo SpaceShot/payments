@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Payments.Api.Controllers;
+using Payments.Core.Models;
+using Payments.Data.InMemory;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http.Results;
-using Payments.Api.WebHost.Controllers;
-using Payments.Api.WebHost.Models;
 using Xunit;
 
 namespace Payments.Api.Tests
@@ -11,7 +12,7 @@ namespace Payments.Api.Tests
     {
         private readonly ResidenceController _residenceController;
         private readonly IResidents _residents;
-        private Residence _singleResident;
+        private readonly Residence _singleResident;
 
         public ResidenceControllerTests()
         {

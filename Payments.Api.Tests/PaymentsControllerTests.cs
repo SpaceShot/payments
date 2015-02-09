@@ -1,10 +1,11 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Payments.Api.WebHost.Controllers;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Payments.Api.Controllers;
+using Payments.Core.Models;
+using Payments.Data.InMemory;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http.Results;
-using Payments.Api.WebHost.Models;
 
 namespace Payments.Api.Tests
 {

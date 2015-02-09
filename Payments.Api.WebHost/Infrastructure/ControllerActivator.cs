@@ -1,5 +1,5 @@
-﻿using Payments.Api.WebHost.Controllers;
-using Payments.Api.WebHost.Models;
+﻿using Payments.Api.Controllers;
+using Payments.Core.Models;
 using System;
 using System.Net.Http;
 using System.Web.Http.Controllers;

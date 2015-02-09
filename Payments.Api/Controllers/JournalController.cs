@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Web.Http;
 
-namespace Payments.Api
+namespace Payments.Api.Controllers
 {
     public class JournalController : ApiController
     {

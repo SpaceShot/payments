@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Payments.Api.WebHost.Tests")]
+[assembly: AssemblyTitle("Payments.Data.InMemory")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Payments.Api.WebHost.Tests")]
+[assembly: AssemblyProduct("Payments.Data.InMemory")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("73e42f2b-7367-431b-b3cb-f0590ae900de")]
+[assembly: Guid("43fe5f5e-d17a-4a4f-9add-7caf36255285")]
 
 // Version information for an assembly consists of the following four values:
 //

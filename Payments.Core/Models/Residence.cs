@@ -1,4 +1,5 @@
-namespace Payments.Api.Models
+
+namespace Payments.Core.Models
 {
     public class Residence
     {

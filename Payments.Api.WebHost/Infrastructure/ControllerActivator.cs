@@ -1,11 +1,11 @@
 ﻿using Payments.Api.Controllers;
-using Payments.Api.Models;
+using Payments.Core.Models;
 using System;
 using System.Net.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
 
-namespace Payments.Api.Infrastructure
+namespace Payments.Api.WebHost.Infrastructure
 {
     public class ControllerActivator : IHttpControllerActivator
     {

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Payments.Core.Models;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Payments.Api.Models
+namespace Payments.Data.InMemory
 {
     public class PaymentsInMemory : IPayments
     {

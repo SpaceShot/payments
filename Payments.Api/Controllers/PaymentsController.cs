@@ -1,6 +1,6 @@
+using Payments.Core.Models;
 using System;
 using System.Web.Http;
-using Payments.Api.Models;
 
 namespace Payments.Api.Controllers
 {

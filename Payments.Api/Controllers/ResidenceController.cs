@@ -1,4 +1,4 @@
-﻿using Payments.Api.Models;
+﻿using Payments.Core.Models;
 using System.Web.Http;
 
 namespace Payments.Api.Controllers

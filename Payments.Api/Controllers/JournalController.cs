@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Payments.Api.Models;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
@@ -20,17 +20,5 @@ namespace Payments.Api.Controllers
             entries.Add(journalEntry);
             return this.Request.CreateResponse();
         }
-    }
- 
-    public class JournalEntryModel
-    {
-        public DateTimeOffset Time { get; set; }
-        public int Distance { get; set; }
-        public TimeSpan Duration { get; set; }
-    }
- 
-    public class JournalModel
-    {
-        public JournalEntryModel[] Entries { get; set; }
     }
 }

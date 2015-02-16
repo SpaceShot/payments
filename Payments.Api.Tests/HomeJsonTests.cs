@@ -1,14 +1,18 @@
 ﻿using System;
-using System.Linq;
 using System.Net.Http;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 using Xunit;
 
 namespace Payments.Api.Tests
 {
-    public class HomeJsonTests
+    public class HomeJsonTests : IDisposable
     {
+        private readonly HttpServerFactory _server;
+
+        public HomeJsonTests()
+        {
+            _server = new HttpServerFactory();
+        }
+
         [Fact]
         public void GetResponseReturnCorrectStatusCode()
         {
@@ -65,23 +69,10 @@ namespace Payments.Api.Tests
                 Assert.Contains(expected, actual.entries);
             }
         }
-    }
 
-    public static class JsonExtensions
-    {
-        public static Task<dynamic> ReadAsJsonAsync(this HttpContent content)
+        public void Dispose()
         {
-            if (content == null)
-                throw new ArgumentNullException("content");
-
-            return content.ReadAsStringAsync().ContinueWith(t =>
-                JsonConvert.DeserializeObject(t.Result));
-        }
-
-        public static dynamic ToJObject<T>(this T obj)
-        {
-            dynamic serialized = JsonConvert.SerializeObject(obj);
-            return JsonConvert.DeserializeObject(serialized);
+            _server.StopServer();
         }
     }
 }

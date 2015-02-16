@@ -8,8 +8,8 @@ namespace Payments.Api.WebHost.Tests
 {
     public class ControllerActivatorTests
     {
-        private readonly IResidents _residents;
-        private readonly IPayments _payments;
+        private readonly IResidents _residents = null;
+        private readonly IPayments _payments = null;
 
         [Fact]
         public void Creates_A_ResidenceController()

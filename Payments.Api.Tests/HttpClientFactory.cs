@@ -1,6 +1,5 @@
 using System;
 using System.Net.Http;
-using System.Web.Http.SelfHost;
 
 namespace Payments.Api.Tests
 {
@@ -8,15 +7,12 @@ namespace Payments.Api.Tests
     {
         public static HttpClient Create()
         {
-            var baseAddress = new Uri("http://localhost:9876");
-            var config = new HttpSelfHostConfiguration(baseAddress);
-            new Bootstrap().Configure(config);
-            var server = new HttpSelfHostServer(config);
-            var client = new HttpClient(server);
+            var baseAddress = "http://localhost:9876";
+            var client = new HttpClient();
 
             try
             {
-                client.BaseAddress = baseAddress;
+                client.BaseAddress = new Uri(baseAddress);
                 return client;
             }
             catch

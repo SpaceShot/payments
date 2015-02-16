@@ -89,7 +89,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="HttpClientFactory.cs" />
-    <Compile Include="HttpServerFactory.cs" />
     <Compile Include="JsonExtensions.cs" />
     <Compile Include="PaymentsControllerTests.cs" />
     <Compile Include="HomeJsonTests.cs" />

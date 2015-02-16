@@ -4,19 +4,19 @@ using Xunit;
 
 namespace Payments.Api.Tests
 {
-    public class HomeJsonTests : IDisposable
+    public class HomeJsonTests : IUseFixture<HttpClientFactory>
     {
-        private readonly HttpServerFactory _server;
+        private HttpClientFactory _httpClientFactory;
 
-        public HomeJsonTests()
+        public void SetFixture(HttpClientFactory httpClientFactory)
         {
-            _server = new HttpServerFactory();
+            _httpClientFactory = httpClientFactory;
         }
 
         [Fact]
         public void GetResponseReturnCorrectStatusCode()
         {
-            using (var client = HttpClientFactory.Create())
+            using (var client = _httpClientFactory.Create())
             {
                 var response = client.GetAsync("").Result;
 
@@ -29,7 +29,7 @@ namespace Payments.Api.Tests
         [Fact]
         public void PostReturnsResponseWithCorrectStatusCode()
         {
-            using (var client = HttpClientFactory.Create())
+            using (var client = _httpClientFactory.Create())
             {
                 var json = new
                 {
@@ -49,7 +49,7 @@ namespace Payments.Api.Tests
         [Fact]
         public void GetAfterPostReturnsResponseWithPostedEntry()
         {
-            using (var client = HttpClientFactory.Create())
+            using (var client = _httpClientFactory.Create())
             {
                 var json = new
                 {
@@ -68,11 +68,6 @@ namespace Payments.Api.Tests
 
                 Assert.Contains(expected, actual.entries);
             }
-        }
-
-        public void Dispose()
-        {
-            _server.StopServer();
         }
     }
 }

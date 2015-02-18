@@ -6,13 +6,13 @@ using Xunit;
 
 namespace Payments.Api.WebHost.Tests
 {
-    public class ControllerActivatorTests
+    internal class ControllerActivatorTests
     {
         private readonly IResidents _residents = null;
         private readonly IPayments _payments = null;
 
         [Fact]
-        public void Creates_A_ResidenceController()
+        internal void Creates_A_ResidenceController()
         {
             var controllerActivator = new ControllerActivator(_residents, _payments);
             var controller = controllerActivator.Create(null, null, typeof(ResidenceController));
@@ -21,7 +21,7 @@ namespace Payments.Api.WebHost.Tests
         }
 
         [Fact]
-        public void Creates_A_PaymentsController()
+        internal void Creates_A_PaymentsController()
         {
             var controllerActivator = new ControllerActivator(_residents, _payments);
             var controller = controllerActivator.Create(null, null, typeof(PaymentsController));
@@ -30,7 +30,7 @@ namespace Payments.Api.WebHost.Tests
         }
 
         [Fact]
-        public void Throws_Exception_For_Unrecognized_ControllerType()
+        internal void Throws_Exception_For_Unrecognized_ControllerType()
         {
             var controllerActivator = new ControllerActivator(_residents, _payments);
 

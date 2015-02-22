@@ -4,19 +4,12 @@ using Xunit;
 
 namespace Payments.Api.Tests
 {
-    public class HomeJsonTests : IUseFixture<HttpClientFactory>
+    public class HomeJsonTests
     {
-        private HttpClientFactory _httpClientFactory;
-
-        public void SetFixture(HttpClientFactory httpClientFactory)
-        {
-            _httpClientFactory = httpClientFactory;
-        }
-
         [Fact]
         public void GetResponseReturnCorrectStatusCode()
         {
-            using (var client = _httpClientFactory.Create())
+            using (var client = HttpClientFactory.Create())
             {
                 var response = client.GetAsync("").Result;
 
@@ -29,7 +22,7 @@ namespace Payments.Api.Tests
         [Fact]
         public void PostReturnsResponseWithCorrectStatusCode()
         {
-            using (var client = _httpClientFactory.Create())
+            using (var client = HttpClientFactory.Create())
             {
                 var json = new
                 {
@@ -49,7 +42,7 @@ namespace Payments.Api.Tests
         [Fact]
         public void GetAfterPostReturnsResponseWithPostedEntry()
         {
-            using (var client = _httpClientFactory.Create())
+            using (var client = HttpClientFactory.Create())
             {
                 var json = new
                 {

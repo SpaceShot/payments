@@ -1,38 +1,20 @@
-using Microsoft.Owin.Hosting;
 using System;
 using System.Net.Http;
+using System.Web.Http;
 
 namespace Payments.Api.Tests
 {
-    public class HttpClientFactory : IDisposable
+    public class HttpClientFactory
     {
-        private readonly IDisposable _server;
-        private readonly string _baseAddress = "http://localhost:9876";
-
-        public HttpClientFactory()
+        public static HttpClient Create()
         {
-            _server = WebApp.Start<Startup>(url: _baseAddress);
-        }
+            var config = new HttpConfiguration();
+            new Bootstrap().Configure(config);
 
-        public void Dispose()
-        {
-            _server.Dispose();
-        }
-
-        public HttpClient Create()
-        {
-            var client = new HttpClient();
-
-            try
-            {
-                client.BaseAddress = new Uri(_baseAddress);
-                return client;
-            }
-            catch
-            {
-                client.Dispose();
-                throw;
-            }
+            var server = new HttpServer(config);
+            var client = new HttpClient(server);
+            client.BaseAddress = new Uri("http://inmemory.testing");
+            return client;
         }
     }
 }

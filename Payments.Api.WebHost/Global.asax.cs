@@ -1,11 +1,11 @@
 ﻿using Payments.Api.WebHost.Infrastructure;
 using Payments.Core.Models;
 using Payments.Data.InMemory;
+using StructureMap;
 using System;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Dispatcher;
-using StructureMap;
 
 namespace Payments.Api.WebHost
 {

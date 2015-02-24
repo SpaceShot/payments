@@ -1,4 +1,4 @@
-﻿using Payments.Api.Models;
+﻿using Payments.Core.Models;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;

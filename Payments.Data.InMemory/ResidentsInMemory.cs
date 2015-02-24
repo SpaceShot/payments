@@ -11,7 +11,7 @@ namespace Payments.Data.InMemory
 
         public ResidentsInMemory()
         {
-             if (_residents == null)
+            if (_residents == null)
             {
                 FillResidentsBag();
             }

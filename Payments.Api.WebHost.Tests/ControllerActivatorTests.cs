@@ -14,7 +14,7 @@ namespace Payments.Api.WebHost.Tests
         [Fact]
         internal void Creates_A_ResidenceController()
         {
-            var controllerActivator = new ControllerActivator(_residents, _payments);
+            var controllerActivator = new HardWiredControllerActivator(_residents, _payments);
             var controller = controllerActivator.Create(null, null, typeof(ResidenceController));
 
             Assert.IsType<ResidenceController>(controller);
@@ -23,7 +23,7 @@ namespace Payments.Api.WebHost.Tests
         [Fact]
         internal void Creates_A_PaymentsController()
         {
-            var controllerActivator = new ControllerActivator(_residents, _payments);
+            var controllerActivator = new HardWiredControllerActivator(_residents, _payments);
             var controller = controllerActivator.Create(null, null, typeof(PaymentsController));
 
             Assert.IsType<PaymentsController>(controller);
@@ -32,7 +32,7 @@ namespace Payments.Api.WebHost.Tests
         [Fact]
         internal void Throws_Exception_For_Unrecognized_ControllerType()
         {
-            var controllerActivator = new ControllerActivator(_residents, _payments);
+            var controllerActivator = new HardWiredControllerActivator(_residents, _payments);
 
             Assert.Throws<ArgumentException>(() => 
                 controllerActivator.Create(null, null, typeof(System.String))

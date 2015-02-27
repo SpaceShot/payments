@@ -6,19 +6,19 @@ namespace Payments.Api.WebHost.Infrastructure
 {
     public class ConfigurationFromWebConfig
     {
-        private readonly string _clientAddress;
+        private readonly string _allowedOrigins;
 
-        public string ClientAddress
+        public string AllowedOrigins
         {
             get
             {
-                return _clientAddress;
+                return _allowedOrigins;
             }
         }
 
         public ConfigurationFromWebConfig()
         {
-            _clientAddress = ConfigurationManager.AppSettings["clientAddress"];
+            _allowedOrigins = ConfigurationManager.AppSettings["allowedOrigins"];
         }
     }
 }

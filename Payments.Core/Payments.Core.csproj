@@ -37,6 +37,8 @@
     <Compile Include="Models\Homeowner.cs" />
     <Compile Include="Models\IPayments.cs" />
     <Compile Include="Models\IResidents.cs" />
+    <Compile Include="Models\JournalEntryModel.cs" />
+    <Compile Include="Models\JournalModel.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Residence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

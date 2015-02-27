@@ -1,5 +1,7 @@
 ﻿using Payments.Api.WebHost.Infrastructure;
+using Payments.Core.Models;
 using Payments.Data.InMemory;
+using StructureMap;
 using System;
 using System.Web.Http;
 using System.Web.Http.Cors;
@@ -22,7 +24,7 @@ namespace Payments.Api.WebHost
             var hostConfig = new ConfigurationFromWebConfig();
 
             // Web API configuration and services
-            var cors = new EnableCorsAttribute(hostConfig.ClientAddress, "*", "*");
+            var cors = new EnableCorsAttribute(hostConfig.AllowedOrigins, "*", "*");
             config.EnableCors(cors);
 
             // Web API routes
@@ -34,9 +36,18 @@ namespace Payments.Api.WebHost
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            // Persistence creation and injection into controllers
             var residents = new ResidentsInMemory();
             var payments = new PaymentsInMemory();
-            config.Services.Replace(typeof(IHttpControllerActivator), new ControllerActivator(residents,payments));
+            
+            ObjectFactory.Configure(cfg =>
+            {
+                cfg.For<IResidents>().Use<ResidentsInMemory>(residents).Singleton();
+                cfg.For<IPayments>().Use<PaymentsInMemory>(payments).Singleton();
+            });
+
+            // Web API Dependency Injection
+            config.Services.Replace(typeof(IHttpControllerActivator), new StructureMapControllerActivator());
         }
     }
 }

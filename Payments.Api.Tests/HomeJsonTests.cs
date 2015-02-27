@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net.Http;
-using System.Web.Http.SelfHost;
 using Xunit;
 
 namespace Payments.Api.Tests
@@ -10,22 +9,57 @@ namespace Payments.Api.Tests
         [Fact]
         public void GetResponseReturnCorrectStatusCode()
         {
-            var baseAddress = new Uri("http://localhost:9876");
-            var config = new HttpSelfHostConfiguration(baseAddress);
-
-            new Bootstrap().Configure(config);
-
-            var server = new HttpSelfHostServer(config);
-
-            using (var client = new HttpClient(server))
+            using (var client = HttpClientFactory.Create())
             {
-                client.BaseAddress = baseAddress;
-
                 var response = client.GetAsync("").Result;
 
                 Assert.True(
-                    response.IsSuccessStatusCode, 
+                    response.IsSuccessStatusCode,
                     "Actual status code: " + response.StatusCode);
+            }
+        }
+
+        [Fact]
+        public void PostReturnsResponseWithCorrectStatusCode()
+        {
+            using (var client = HttpClientFactory.Create())
+            {
+                var json = new
+                {
+                    time = DateTimeOffset.Now,
+                    distance = 8500,
+                    duration = TimeSpan.FromMinutes(44)
+                };
+
+                var response = client.PostAsJsonAsync("", json).Result;
+
+                Assert.True(
+                    response.IsSuccessStatusCode,
+                    "Actual status code: " + response.StatusCode);
+            }
+        }
+
+        [Fact]
+        public void GetAfterPostReturnsResponseWithPostedEntry()
+        {
+            using (var client = HttpClientFactory.Create())
+            {
+                var json = new
+                {
+                    time = DateTimeOffset.Now,
+                    distance = 8500,
+                    duration = TimeSpan.FromMinutes(44)
+                };
+
+                var expected = json.ToJObject();
+
+                client.PostAsJsonAsync("", json).Wait();
+
+                var response = client.GetAsync("").Result;
+
+                var actual = response.Content.ReadAsJsonAsync().Result;
+
+                Assert.Contains(expected, actual.entries);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Newtonsoft.Json.Serialization;
 using System.Web.Http;
 
 namespace Payments.Api
@@ -15,6 +15,9 @@ namespace Payments.Api
                     controller = "Journal",
                     id = RouteParameter.Optional
                 });
+
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
+                new CamelCasePropertyNamesContractResolver();
         }
     }
 }

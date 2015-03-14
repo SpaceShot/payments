@@ -14,7 +14,8 @@ namespace Payments.Api
                 {
                     controller = "Journal",
                     id = RouteParameter.Optional
-                });
+                }
+            );
 
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
                 new CamelCasePropertyNamesContractResolver();

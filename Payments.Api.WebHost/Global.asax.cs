@@ -13,21 +13,28 @@ namespace Payments.Api.WebHost
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            GlobalConfiguration.Configure(WebApiConfig.Register);
+            GlobalConfiguration.Configure(WebApiRegistration.ComposeConfiguration);
         }
     }
- 
-    public class WebApiConfig
+
+    public class WebApiRegistration
     {
-        public static void Register(HttpConfiguration config)
+        public static void ComposeConfiguration(HttpConfiguration config)
         {
-            var hostConfig = new ConfigurationFromWebConfig();
+            // Persistence creation
+            var residents = new ResidentsInMemory();
+            var payments = new PaymentsInMemory();
 
-            // Web API configuration and services
-            var cors = new EnableCorsAttribute(hostConfig.AllowedOrigins, "*", "*");
-            config.EnableCors(cors);
+            Cors.Configure(config);
+            Routes.Configure(config);
+            Controllers.Configure(config, payments, residents);
+        }
+    }
 
-            // Web API routes
+    public static class Routes
+    {
+        public static void Configure(HttpConfiguration config)
+        {
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
@@ -35,18 +42,31 @@ namespace Payments.Api.WebHost
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+        }
+    }
 
-            // Persistence creation and injection into controllers
-            var residents = new ResidentsInMemory();
-            var payments = new PaymentsInMemory();
-            
+    public static class Cors
+    {
+        public static void Configure(HttpConfiguration config)
+        {
+            var hostConfig = new ConfigurationFromWebConfig();
+
+            // Web API configuration and services
+            var cors = new EnableCorsAttribute(hostConfig.AllowedOrigins, "*", "*");
+            config.EnableCors(cors);
+        }
+    }
+
+    public static class Controllers
+    {
+        public static void Configure(HttpConfiguration config, IPayments payments, IResidents residents)
+        {
             ObjectFactory.Configure(cfg =>
             {
-                cfg.For<IResidents>().Use<ResidentsInMemory>(residents).Singleton();
-                cfg.For<IPayments>().Use<PaymentsInMemory>(payments).Singleton();
+                cfg.For<IResidents>().Use(residents).Singleton();
+                cfg.For<IPayments>().Use(payments).Singleton();
             });
 
-            // Web API Dependency Injection
             config.Services.Replace(typeof(IHttpControllerActivator), new StructureMapControllerActivator());
         }
     }

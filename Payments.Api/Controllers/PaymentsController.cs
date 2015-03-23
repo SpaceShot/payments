@@ -35,7 +35,12 @@ namespace Payments.Api.Controllers
             payment.Id = guid;
             _payments.Add(payment);
 
-            return Created<Payment>("http://localhost:36449/api/Payments/" + guid.ToString(), payment);
+            return CreatedAtRoute<Payment>("DefaultApi", new
+                {
+                    controller = "Payments",
+                    id = guid.ToString()
+                },
+                payment);
         }
     }
 }

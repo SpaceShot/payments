@@ -68,13 +68,21 @@ namespace Payments.Api.Tests
         {
             var result = _paymentsController.Post(_newPayment);
 
-            Assert.IsType<CreatedNegotiatedContentResult<Payment>>(result);
+            Assert.IsType<CreatedAtRouteNegotiatedContentResult<Payment>>(result);
+        }
+
+        [Fact]
+        public void Post_Payment_Returns_Location_Header()
+        {
+            var result = _paymentsController.Post(_newPayment) as CreatedAtRouteNegotiatedContentResult<Payment>;
+
+            Assert.NotNull(result);
         }
 
         [Fact]
         public void Post_Payment_Adds_Payment_To_Payments_Store()
         {
-            var result = _paymentsController.Post(_newPayment) as CreatedNegotiatedContentResult<Payment>;
+            var result = _paymentsController.Post(_newPayment) as CreatedAtRouteNegotiatedContentResult<Payment>;
             var returnedId = result.Content.Id;
 
             var payment = _payments.Get(returnedId);

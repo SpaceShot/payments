@@ -1,5 +1,7 @@
 ﻿using Payments.Api.WebHost.Infrastructure;
-using Payments.Api.WebHost.Models;
+using Payments.Core.Models;
+using Payments.Data.InMemory;
+using StructureMap;
 using System;
 using System.Web.Http;
 using System.Web.Http.Cors;
@@ -11,21 +13,28 @@ namespace Payments.Api.WebHost
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            GlobalConfiguration.Configure(WebApiConfig.Register);
+            GlobalConfiguration.Configure(WebApiRegistration.ComposeConfiguration);
         }
     }
- 
-    public class WebApiConfig
+
+    public class WebApiRegistration
     {
-        public static void Register(HttpConfiguration config)
+        public static void ComposeConfiguration(HttpConfiguration config)
         {
-            var hostConfig = new ConfigurationFromWebConfig();
+            // Persistence creation
+            var residents = new ResidentsInMemory();
+            var payments = new PaymentsInMemory();
 
-            // Web API configuration and services
-            var cors = new EnableCorsAttribute(hostConfig.ClientAddress, "*", "*");
-            config.EnableCors(cors);
+            Cors.Configure(config);
+            Routes.Configure(config);
+            Controllers.Configure(config, payments, residents);
+        }
+    }
 
-            // Web API routes
+    public static class Routes
+    {
+        public static void Configure(HttpConfiguration config)
+        {
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
@@ -33,10 +42,32 @@ namespace Payments.Api.WebHost
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+        }
+    }
 
-            var residents = new ResidentsInMemory();
-            var payments = new PaymentsInMemory();
-            config.Services.Replace(typeof(IHttpControllerActivator), new ControllerActivator(residents,payments));
+    public static class Cors
+    {
+        public static void Configure(HttpConfiguration config)
+        {
+            var hostConfig = new ConfigurationFromWebConfig();
+
+            // Web API configuration and services
+            var cors = new EnableCorsAttribute(hostConfig.AllowedOrigins, "*", "*");
+            config.EnableCors(cors);
+        }
+    }
+
+    public static class Controllers
+    {
+        public static void Configure(HttpConfiguration config, IPayments payments, IResidents residents)
+        {
+            ObjectFactory.Configure(cfg =>
+            {
+                cfg.For<IResidents>().Use(residents).Singleton();
+                cfg.For<IPayments>().Use(payments).Singleton();
+            });
+
+            config.Services.Replace(typeof(IHttpControllerActivator), new StructureMapControllerActivator());
         }
     }
 }

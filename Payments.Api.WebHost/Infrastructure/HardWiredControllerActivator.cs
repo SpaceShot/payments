@@ -1,5 +1,5 @@
-﻿using Payments.Api.WebHost.Controllers;
-using Payments.Api.WebHost.Models;
+﻿using Payments.Api.Controllers;
+using Payments.Core.Models;
 using System;
 using System.Net.Http;
 using System.Web.Http.Controllers;
@@ -7,13 +7,13 @@ using System.Web.Http.Dispatcher;
 
 namespace Payments.Api.WebHost.Infrastructure
 {
-    public class ControllerActivator : IHttpControllerActivator
+    public class HardWiredControllerActivator : IHttpControllerActivator
     {
         private readonly IResidents _residents;
         private readonly IPayments _payments;
 
 
-        public ControllerActivator(IResidents residents, IPayments payments)
+        public HardWiredControllerActivator(IResidents residents, IPayments payments)
         {
             this._residents = residents;
             this._payments = payments;

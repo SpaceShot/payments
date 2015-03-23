@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Payments.Api.WebHost.Models
+namespace Payments.Core.Models
 {
     public interface IResidents
     {

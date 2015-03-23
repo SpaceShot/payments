@@ -1,8 +1,8 @@
-using Payments.Api.WebHost.Models;
+using Payments.Core.Models;
 using System;
 using System.Web.Http;
 
-namespace Payments.Api.WebHost.Controllers
+namespace Payments.Api.Controllers
 {
     public class PaymentsController : ApiController
     {
@@ -35,7 +35,12 @@ namespace Payments.Api.WebHost.Controllers
             payment.Id = guid;
             _payments.Add(payment);
 
-            return Created<Payment>("http://localhost:36449/api/Payments/" + guid.ToString(), payment);
+            return CreatedAtRoute<Payment>("DefaultApi", new
+                {
+                    controller = "Payments",
+                    id = guid.ToString()
+                },
+                payment);
         }
     }
 }

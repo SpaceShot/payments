@@ -11,7 +11,7 @@ namespace Payments.Api.Tests
         {
             using (var client = HttpClientFactory.Create())
             {
-                var response = client.GetAsync("").Result;
+                var response = client.GetAsync("api").Result;
 
                 Assert.True(
                     response.IsSuccessStatusCode,
@@ -31,7 +31,7 @@ namespace Payments.Api.Tests
                     duration = TimeSpan.FromMinutes(44)
                 };
 
-                var response = client.PostAsJsonAsync("", json).Result;
+                var response = client.PostAsJsonAsync("api", json).Result;
 
                 Assert.True(
                     response.IsSuccessStatusCode,
@@ -53,9 +53,9 @@ namespace Payments.Api.Tests
 
                 var expected = json.ToJObject();
 
-                client.PostAsJsonAsync("", json).Wait();
+                client.PostAsJsonAsync("api", json).Wait();
 
-                var response = client.GetAsync("").Result;
+                var response = client.GetAsync("api").Result;
 
                 var actual = response.Content.ReadAsJsonAsync().Result;
 

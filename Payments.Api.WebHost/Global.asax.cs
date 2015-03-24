@@ -1,4 +1,5 @@
-﻿using Payments.Api.WebHost.Infrastructure;
+﻿using Payments.Api.Routes;
+using Payments.Api.WebHost.Infrastructure;
 using Payments.Core.Models;
 using Payments.Data.InMemory;
 using StructureMap;
@@ -26,22 +27,8 @@ namespace Payments.Api.WebHost
             var payments = new PaymentsInMemory();
 
             Cors.Configure(config);
-            Routes.Configure(config);
+            RouteConfig.Configure(config);
             Controllers.Configure(config, payments, residents);
-        }
-    }
-
-    public static class Routes
-    {
-        public static void Configure(HttpConfiguration config)
-        {
-            config.MapHttpAttributeRoutes();
-
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
         }
     }
 

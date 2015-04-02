@@ -7,7 +7,7 @@ var residence = (function () {
         buildOutput: function (div, data) {
             var result = $("<p>");
             for (i = 0; i < data.length; i++) {
-                var p = $("<p>").html(data[i].Id);
+                var p = $("<p>").html(data[i].id);
                 result.append(p);
             }
             $(div).html(result);
@@ -41,23 +41,23 @@ app.service('restApiService', ['$http', function ($http) {
 app.service('testApiService', function () {
     var houses = [
         {
-            Id: 2732,
-            Homeowner: {
-                Name: "Mike and Leann Cordenoy",
-                Address: "2732 North Test",
-                City: "Maxville",
-                State: "CA",
-                Zip: "91256"
+            id: 2732,
+            homeowner: {
+                name: "Mike and Leann Cordenoy",
+                address: "2732 North Test",
+                city: "Maxville",
+                state: "CA",
+                zip: "91256"
             }
         },
         {
-            Id: 2740,
-            Homeowner: {
-                Name: "Cheryl and Lance Armstrong",
-                Address: "2740 North Test",
-                City: "Maxville",
-                State: "CA",
-                Zip: "91256"
+            id: 2740,
+            homeowner: {
+                name: "Cheryl and Lance Armstrong",
+                address: "2740 North Test",
+                city: "Maxville",
+                state: "CA",
+                zip: "91256"
             }
         }];
 
@@ -70,8 +70,6 @@ app.service('testApiService', function () {
 
 
 $(function () {
-    $('#jqueryCanary').html('Yep, we&#39re good');
-
     $.get(webConfiguration.apiBaseAddress + "api/Residence")
         .done(function (data) {
             console.log(data);

@@ -1,14 +1,10 @@
 ﻿using Payments.Api.Controllers;
-using Payments.Api.Routes;
 using Payments.Core.Models;
 using Payments.Data.InMemory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Web.Http;
 using System.Web.Http.Results;
-using System.Web.Http.Routing;
 using Xunit;
 
 namespace Payments.Api.Tests
@@ -73,14 +69,6 @@ namespace Payments.Api.Tests
             var result = _paymentsController.Post(_newPayment);
 
             Assert.IsType<CreatedAtRouteNegotiatedContentResult<Payment>>(result);
-        }
-
-        [Fact]
-        public void Post_Payment_Returns_Location_Header()
-        {
-            var result = _paymentsController.Post(_newPayment) as CreatedAtRouteNegotiatedContentResult<Payment>;
-
-            Assert.NotNull(result);
         }
 
         [Fact]

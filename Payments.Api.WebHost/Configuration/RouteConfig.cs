@@ -1,12 +1,7 @@
 ﻿using Newtonsoft.Json.Serialization;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace Payments.Api.Routes
+namespace Payments.Api.WebHost.Configuration
 {
     public static class RouteConfig
     {
@@ -19,7 +14,6 @@ namespace Payments.Api.Routes
                 routeTemplate: "api/{controller}/{id}",
                                 defaults: new
                                 {
-                                    controller = "Journal",
                                     id = RouteParameter.Optional
                                 }
             );

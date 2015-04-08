@@ -38,7 +38,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -72,10 +71,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="HttpClientFactory.cs" />
-    <Compile Include="JsonExtensions.cs" />
     <Compile Include="PaymentsControllerTests.cs" />
-    <Compile Include="HomeJsonTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResidenceControllerTests.cs" />
   </ItemGroup>
@@ -93,7 +89,7 @@
       <Name>Payments.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Payments.Data.InMemory\Payments.Data.InMemory.csproj">
-      <Project>{FE4BDB20-E2FF-460F-8D70-088E5E011D38}</Project>
+      <Project>{fe4bdb20-e2ff-460f-8d70-088e5e011d38}</Project>
       <Name>Payments.Data.InMemory</Name>
     </ProjectReference>
   </ItemGroup>

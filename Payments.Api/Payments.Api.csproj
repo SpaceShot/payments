@@ -50,9 +50,7 @@
   <ItemGroup>
     <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\ResidenceController.cs" />
-    <Compile Include="Controllers\JournalController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Routes\RouteConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

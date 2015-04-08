@@ -92,6 +92,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ControllerConfig.cs" />
+    <Compile Include="Configuration\CorsConfig.cs" />
+    <Compile Include="Configuration\RouteConfig.cs" />
     <Compile Include="Infrastructure\ConfigurationFromWebConfig.cs" />
     <Compile Include="Infrastructure\HardWiredControllerActivator.cs" />
     <Compile Include="Global.asax.cs">

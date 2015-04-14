@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Core", "Payments.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Data.InMemory", "Payments.Data.InMemory\Payments.Data.InMemory.csproj", "{FE4BDB20-E2FF-460F-8D70-088E5E011D38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Api.WebHost.Tests", "Payments.Api.WebHost.Tests\Payments.Api.WebHost.Tests.csproj", "{8361D8A6-C5F1-49AB-A6F9-E747608027F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,11 +51,16 @@ Global
 		{FE4BDB20-E2FF-460F-8D70-088E5E011D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE4BDB20-E2FF-460F-8D70-088E5E011D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE4BDB20-E2FF-460F-8D70-088E5E011D38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8361D8A6-C5F1-49AB-A6F9-E747608027F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8361D8A6-C5F1-49AB-A6F9-E747608027F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8361D8A6-C5F1-49AB-A6F9-E747608027F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8361D8A6-C5F1-49AB-A6F9-E747608027F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{176FC537-F2A6-4FDA-9D94-767E08AF48CE} = {F9268FC5-1C99-4D13-8AAC-247D6BB7EE31}
+		{8361D8A6-C5F1-49AB-A6F9-E747608027F9} = {F9268FC5-1C99-4D13-8AAC-247D6BB7EE31}
 	EndGlobalSection
 EndGlobal

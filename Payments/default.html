@@ -1,7 +1,6 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="accountBook">
 <head>
-  <!--  <link href="bootstrap.min.css" rel="stylesheet" />-->
     <link href='http://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link href="content/site.css" rel="stylesheet" />
@@ -10,7 +9,7 @@
 <body ng-controller="AccountBookController as book">
     <header>
         <div class="header">
-            <div class="title">Barley Sheaf HOA Accounting Tools</div>
+            <div class="title">Barley Wheat HOA Accounting Tools</div>
             <div class="logo">
                 <img src="assets/barleysheaf-small.png" />
             </div>
@@ -29,14 +28,8 @@
     <div class="test">
         <p>Hello, welcome! Please come in!</p>
         <div ng-repeat="residence in book.houses">
-            <h1>{{residence.Homeowner.Name}}</h1>
-            <h2>{{residence.Homeowner.Address}} id: {{residence.Id}}</h2>
-        </div>
-        <p>
-            jQuery canary: <span id="jqueryCanary"></span>
-        </p>
-        <div id="residences">
-            <!--this empty div should get filled with the ids of the residences-->
+            <h1>{{residence.homeowner.name}}</h1>
+            <h2>{{residence.homeowner.address}} id: {{residence.id}}</h2>
         </div>
     </div>
 

@@ -72,11 +72,12 @@ namespace Payments.Api.Tests
         }
 
         [Fact]
-        public void Post_Payment_Returns_Location_Header()
+        public void Post_Payment_Returns_Correct_Location_Header()
         {
             var result = _paymentsController.Post(_newPayment) as CreatedAtRouteNegotiatedContentResult<Payment>;
 
-            Assert.NotNull(result);
+            Assert.Equal("DefaultApi", result.RouteName);
+            Assert.NotNull(result.RouteValues["id"]);
         }
 
         [Fact]

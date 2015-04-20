@@ -5,13 +5,12 @@ using System.Net.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
 
-namespace Payments.Api.WebHost.Infrastructure
+namespace Payments.Api.AcceptanceTests
 {
     public class HardWiredControllerActivator : IHttpControllerActivator
     {
         private readonly IResidents _residents;
         private readonly IPayments _payments;
-
 
         public HardWiredControllerActivator(IResidents residents, IPayments payments)
         {

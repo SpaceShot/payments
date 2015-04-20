@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Core", "Payments.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Data.InMemory", "Payments.Data.InMemory\Payments.Data.InMemory.csproj", "{FE4BDB20-E2FF-460F-8D70-088E5E011D38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Api.WebHost.Tests", "Payments.Api.WebHost.Tests\Payments.Api.WebHost.Tests.csproj", "{8361D8A6-C5F1-49AB-A6F9-E747608027F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payments.Api.AcceptanceTests", "Payments.Api.AcceptanceTests\Payments.Api.AcceptanceTests.csproj", "{8361D8A6-C5F1-49AB-A6F9-E747608027F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

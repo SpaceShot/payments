@@ -8,7 +8,9 @@ namespace Payments.Api.WebHost.Infrastructure
 {
     public class StructureMapControllerActivator : IHttpControllerActivator
     {
-        public IHttpController Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+        public IHttpController Create(HttpRequestMessage request,
+            HttpControllerDescriptor controllerDescriptor,
+            Type controllerType)
         {
             return ObjectFactory.GetInstance(controllerType) as IHttpController;
         }

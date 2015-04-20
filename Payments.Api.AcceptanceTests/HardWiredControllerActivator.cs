@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
 
-namespace Payments.Api.WebHost.Tests
+namespace Payments.Api.AcceptanceTests
 {
     public class HardWiredControllerActivator : IHttpControllerActivator
     {

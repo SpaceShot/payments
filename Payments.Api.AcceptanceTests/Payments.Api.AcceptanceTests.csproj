@@ -7,8 +7,8 @@
     <ProjectGuid>{8361D8A6-C5F1-49AB-A6F9-E747608027F9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Payments.Api.WebHost.Tests</RootNamespace>
-    <AssemblyName>Payments.Api.WebHost.Tests</AssemblyName>
+    <RootNamespace>Payments.Api.AcceptanceTests</RootNamespace>
+    <AssemblyName>Payments.Api.AcceptanceTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -71,6 +71,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="HardWiredControllerActivator.cs" />
+    <Compile Include="HttpClientBuilder.cs" />
     <Compile Include="PaymentsJsonTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -79,13 +80,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Payments.Api.WebHost\Payments.Api.WebHost.csproj">
-      <Project>{18d14f00-be5b-426a-9cc8-af2cd77a7bfc}</Project>
-      <Name>Payments.Api.WebHost</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Payments.Api\Payments.Api.csproj">
       <Project>{fca435f2-64c3-49e3-bd6c-dba1285f7538}</Project>
       <Name>Payments.Api</Name>
